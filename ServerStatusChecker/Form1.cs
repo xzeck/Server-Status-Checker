@@ -23,7 +23,7 @@ namespace ServerStatusChecker
             Loglbl.Text += "\n\nWill take a few seconds";
 
             //Calling Status Checker
-            ServerStatusChecker();
+            StatusChecker();
 
             Thread.Sleep(1000);
 
@@ -41,7 +41,7 @@ namespace ServerStatusChecker
             }
         }
 
-        public void ServerStatusChecker()
+        public void StatusChecker()
         {
              //Creating a variable named ping
             System.Net.NetworkInformation.Ping ping = new System.Net.NetworkInformation.Ping();
@@ -65,13 +65,30 @@ namespace ServerStatusChecker
                     //If true , status = true and the website is up
                     Status = true;
 
+                    changepictureboxcolor();
                 }
             }catch
             {
                 //If false , status = false and the website is down 
                 Status = false;
-                
+                changepictureboxcolor();
+
+
             }
         }
+
+        void changepictureboxcolor()
+        {
+            StatusPictureBox.BackgroundImage = ServerStatusChecker.Properties.Resources.WebInitial;
+
+            if(Status == true)
+            {
+                StatusPictureBox.BackgroundImage = ServerStatusChecker.Properties.Resources.WebUp;
+            }else if (Status == false)
+            {
+                StatusPictureBox.BackgroundImage = ServerStatusChecker.Properties.Resources.WebDown;
+            }
+        }
+       
     }
 }
