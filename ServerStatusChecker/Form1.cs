@@ -79,7 +79,7 @@ namespace ServerStatusChecker
 
         void changepictureboxcolor()
         {
-            StatusPictureBox.BackgroundImage = ServerStatusChecker.Properties.Resources.WebInitial;
+            StatusPictureBox.BackgroundImage = ServerStatusChecker.Properties.Resources.WebDown;
 
             if(Status == true)
             {
