@@ -10,20 +10,19 @@ namespace ServerStatusChecker
         {
             InitializeComponent();
         }
+        
 
-
-        Boolean Status;
+        Boolean Status;  // variable that checks status of the website
         private void CheckStatusbutton_Click(object sender, EventArgs e)
         {
-
+            //Initializing Label with no text
             Loglbl.Text = "";
 
-            Loglbl.ForeColor = System.Drawing.Color.Aqua;
             Loglbl.Text += "Checking status....";
 
             Loglbl.Text += "\n\nWill take a few seconds";
 
-            Thread.Sleep(100);
+            //Calling Status Checker
             ServerStatusChecker();
 
             Thread.Sleep(1000);
@@ -44,28 +43,32 @@ namespace ServerStatusChecker
 
         public void ServerStatusChecker()
         {
-           
-            
-
+             //Creating a variable named ping
             System.Net.NetworkInformation.Ping ping = new System.Net.NetworkInformation.Ping();
 
+            //concatenating the website name with https://wwww.
             string url ="https://www." + WebsiteName.Text;
 
+            //convering URL name to uristring 
             Uri URLname = new Uri(url);
 
-           
+            //Displaying website name 
             Loglbl.Text += "\nPinging " + Convert.ToString(WebsiteName.Text);
             try
-            {
+            { 
+                //Making variable named pingresult which sends ping to the URL host and with a timeout of 5000ms
                 System.Net.NetworkInformation.PingReply pingresult = ping.Send(URLname.Host, 5000);
-                if(pingresult.Status == System.Net.NetworkInformation.IPStatus.Success)
+
+                //Checking the status of ping result , if its a success
+                if (pingresult.Status == System.Net.NetworkInformation.IPStatus.Success)
                 {
+                    //If true , status = true and the website is up
                     Status = true;
-                   
-                   
+
                 }
             }catch
             {
+                //If false , status = false and the website is down 
                 Status = false;
                 
             }
