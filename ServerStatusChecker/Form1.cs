@@ -25,19 +25,18 @@ namespace ServerStatusChecker
             //Calling Status Checker
             StatusChecker();
 
-            Thread.Sleep(1000);
 
             if(Status == true)
             {
                 Loglbl.ForeColor = System.Drawing.Color.LawnGreen;
                 Loglbl.Text += "\n\nThe website is up and running";
-                Thread.Sleep(100);
+                
             }
             else if (Status == false)
             {
                 Loglbl.ForeColor = System.Drawing.Color.Red;
                 Loglbl.Text += "\n\nThe website is down , please check after a few minutes";
-                Thread.Sleep(100);
+               
             }
         }
 
@@ -64,28 +63,31 @@ namespace ServerStatusChecker
                 {
                     //If true , status = true and the website is up
                     Status = true;
-
+                    //Calling function to change the picture box color 
                     changepictureboxcolor();
                 }
             }catch
             {
                 //If false , status = false and the website is down 
                 Status = false;
+
+                //Calling function to change the picture box color 
                 changepictureboxcolor();
-
-
             }
         }
 
         void changepictureboxcolor()
         {
+            //Default image
             StatusPictureBox.BackgroundImage = ServerStatusChecker.Properties.Resources.WebDown;
 
+            
             if(Status == true)
-            {
+            {   //If the website is up
                 StatusPictureBox.BackgroundImage = ServerStatusChecker.Properties.Resources.WebUp;
             }else if (Status == false)
             {
+                //If the website is down
                 StatusPictureBox.BackgroundImage = ServerStatusChecker.Properties.Resources.WebDown;
             }
         }
