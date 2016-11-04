@@ -96,7 +96,7 @@
             this.Controls.Add(this.CheckStatusbutton);
             this.Controls.Add(this.WebsiteName);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Server Status Check";
             ((System.ComponentModel.ISupportInitialize)(this.StatusPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
