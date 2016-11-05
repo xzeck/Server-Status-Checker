@@ -39,7 +39,7 @@
             // WebsiteName
             // 
             this.WebsiteName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WebsiteName.Location = new System.Drawing.Point(43, 12);
+            this.WebsiteName.Location = new System.Drawing.Point(47, 12);
             this.WebsiteName.Multiline = true;
             this.WebsiteName.Name = "WebsiteName";
             this.WebsiteName.Size = new System.Drawing.Size(425, 61);
@@ -48,7 +48,7 @@
             // CheckStatusbutton
             // 
             this.CheckStatusbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckStatusbutton.Location = new System.Drawing.Point(142, 94);
+            this.CheckStatusbutton.Location = new System.Drawing.Point(168, 94);
             this.CheckStatusbutton.Name = "CheckStatusbutton";
             this.CheckStatusbutton.Size = new System.Drawing.Size(225, 97);
             this.CheckStatusbutton.TabIndex = 1;
