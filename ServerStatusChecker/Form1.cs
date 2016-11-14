@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Threading;
-using System.Drawing;
+
 
 namespace ServerStatusChecker
 {
@@ -56,10 +55,11 @@ namespace ServerStatusChecker
                 //Making variable named pingresult which sends ping to the URL host and with a timeout of 5000ms
                 System.Net.NetworkInformation.PingReply pingresult = ping.Send(URLname.Host, 5000);
                 //Displaying website name 
-                Loglbl.Text += "\nPinging " + Convert.ToString(WebsiteName.Text) +"[" + pingresult.Address + "]";
+                Loglbl.Text += "\n\nPinging " + Convert.ToString(WebsiteName.Text) +"[" + pingresult.Address + "]";
 
-                Loglbl.Text += "Round trip time for ICMP in ms:" + pingresult.RoundtripTime;
-
+                //ICMP round trip time
+                Loglbl.Text += "\n\nRound trip time for ICMP in ms:" + pingresult.RoundtripTime;
+                     
                 //Checking the status of ping result , if its a success
                 if (pingresult.Status == System.Net.NetworkInformation.IPStatus.Success)
                 {
@@ -92,7 +92,7 @@ namespace ServerStatusChecker
             {
                 //If the website is down
                 StatusPictureBox.BackgroundImage = ServerStatusChecker.Properties.Resources.WebDown;
-            }
+             }
         }
 
     }
