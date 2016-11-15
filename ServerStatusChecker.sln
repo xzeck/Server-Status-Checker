@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerStatusChecker", "ServerStatusChecker\ServerStatusChecker.csproj", "{E936E814-78A0-4AD3-B38A-BF371590423C}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Server Status Checker", "Server Status Checker\Server Status Checker.vdproj", "{4D3EE2DF-A8CA-4279-952C-D26E988632DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{E936E814-78A0-4AD3-B38A-BF371590423C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E936E814-78A0-4AD3-B38A-BF371590423C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E936E814-78A0-4AD3-B38A-BF371590423C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D3EE2DF-A8CA-4279-952C-D26E988632DC}.Debug|Any CPU.ActiveCfg = Debug
+		{4D3EE2DF-A8CA-4279-952C-D26E988632DC}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
